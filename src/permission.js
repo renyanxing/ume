@@ -17,6 +17,21 @@ router.beforeEach(async(to, from, next) => {
   // set page title
   document.title = getPageTitle(to.meta.title)
 
+
+/*
+  if (to.path === '/login') {
+    // if is logged in, redirect to the home page
+    next({ path: '/' })
+    NProgress.done()
+  }
+  else {
+      next()
+      NProgress.done()
+
+  }
+  */
+
+
   // determine whether the user has logged in
   const hasToken = getToken()
 
@@ -33,7 +48,7 @@ router.beforeEach(async(to, from, next) => {
         try {
           // get user info
           await store.dispatch('user/getInfo')
-
+          
           next()
         } catch (error) {
           // remove token and go to login page to re-login
@@ -45,7 +60,7 @@ router.beforeEach(async(to, from, next) => {
       }
     }
   } else {
-    /* has no token*/
+    //has no token
 
     if (whiteList.indexOf(to.path) !== -1) {
       // in the free login whitelist, go directly
@@ -56,6 +71,7 @@ router.beforeEach(async(to, from, next) => {
       NProgress.done()
     }
   }
+
 })
 
 router.afterEach(() => {

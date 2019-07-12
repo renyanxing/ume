@@ -5,8 +5,8 @@
   "author": "Pan <panfree23@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build:prod": "vue-cli-service build",
+    "dev": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "preview": "node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src",
@@ -15,13 +15,14 @@
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "dependencies": {
-    "axios": "0.18.1",
+    "axios": "^0.18.1",
     "element-ui": "2.7.2",
     "js-cookie": "2.2.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "vue": "2.6.10",
+    "vue-axios": "^2.1.4",
     "vue-router": "3.0.6",
     "vuex": "3.1.0"
   },

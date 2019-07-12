@@ -78,14 +78,25 @@ export const constantRoutes = [
   },
 
   {
-    path: '/form',
+    path: '/tea',
     component: Layout,
+    redirect: '/tea/watch',
+    meta: {
+      title: '茶·品鉴',
+      icon: 'form'
+    },
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        path: 'index/watch',
+        name: 'tea',
+        component: () => import('@/views/tea/watch/index'),
+        meta: { title: '查看' }
+      },
+      {
+        path: 'index/add',
+        name: 'tea',
+        component: () => import('@/views/tea/add/index'),
+        meta: { title: '添加' }
       }
     ]
   },

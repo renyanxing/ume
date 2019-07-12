@@ -22,3 +22,9 @@ export function logout() {
     method: 'post'
   })
 }
+export function removeimg(file){
+  return request({
+    url: '/api/removeimg.ashx',
+    method: 'post'
+  })
+}

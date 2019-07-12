@@ -47,7 +47,7 @@ const actions = {
         }
 
         const { name, avatar } = data
-
+debugger
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
         resolve(data)
